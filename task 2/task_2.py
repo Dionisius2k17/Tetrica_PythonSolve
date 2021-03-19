@@ -1,17 +1,23 @@
-import wikipedia
-from selenium import webdriver
-import sys
-import numpy
+#!/usr/bin/env python3
+from itertools import groupby
+import wikipediaapi
 
+def get_categorymembers(categorymembers):
+    for c in categorymembers.values():
+        yield c.title
 
-def resutling():
-    chr = 'А'
-    while (chr <= 'Я'):
-        i = 0
-        while (i < j):
-            i += 1
-        print(chr, " : ", i)
-        chr += 1
+wiki_wiki = wikipediaapi.Wikipedia('ru')
+page_animal = wiki_wiki.page("Категория:Животные_по_алфавиту")
 
-print(resulting)
+categories = get_categorymembers(page_animal.categorymembers)
+next(categories)
+
+categories = sorted(categories)
+
+groups = groupby(categories, lambda k: k[0])
+
+for k, v in groups:
+    if k >= 'Ё':
+        print(k, ":", len(list(v)))
+
 
