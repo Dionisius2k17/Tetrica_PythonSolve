@@ -11,7 +11,7 @@ page_animal = wiki_wiki.page("Категория:Животные_по_алфа�
 
 categories = get_categorymembers(page_animal.categorymembers)
 next(categories)
-
+categories = [c for c in categories if ' ' in c]
 categories = sorted(categories)
 
 groups = groupby(categories, lambda k: k[0])
