@@ -7,3 +7,4 @@ def task(array):
         i += 1
 
 print(task("111111111111111111111111100000000")) 
+print("The complexity of this algorithm is O(n)")
