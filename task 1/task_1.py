@@ -5,6 +5,7 @@ def task(array):
             print("First zero index is", i)
             break
         i += 1
+    return i
 
 print(task("111111111111111111111111100000000")) 
 print("The complexity of this algorithm is O(n)")

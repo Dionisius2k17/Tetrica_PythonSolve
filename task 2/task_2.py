@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#Код проверялся на системах Linux (Ubuntu, MacOS)
 from itertools import groupby
 import wikipediaapi
 
